@@ -1,0 +1,26 @@
+<h1>我的名字: {{user.name}}</h1>
+
+<h2>我的待辦事項:</h2>
+<ul>
+  {{#each todos}}
+  <li>{{title}} ----- {{isDone}}</li>
+{{/each}}
+</ul>
+
+
+<hr>
+
+<h2>我追蹤的人:</h2>
+{{#each user.following}}
+  <h3>{{name}}</h3>
+{{/each}}
+
+<h2>追蹤我的人:</h2>
+{{#each user.followers}}
+  <h3>{{name}}</h3>
+{{/each}}
+
+
+<form action="/users/logout" method="post">
+  <button type="submit">登出</button>
+</form>
